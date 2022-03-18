@@ -2,10 +2,10 @@
 
 Karen::Karen(void)
 {
-	this->levels[0] = "DEBUG";
-	this->levels[1] = "INFO";
-	this->levels[2] = "WARNING";
-	this->levels[3] = "ERROR";
+	levels[0] = "DEBUG";
+	levels[1] = "INFO";
+	levels[2] = "WARNING";
+	levels[3] = "ERROR";
 
 	this->myArr[0] = &Karen::_debug;
 	this->myArr[1] = &Karen::_info;
@@ -39,17 +39,22 @@ void Karen::_error(void)
 	std::cout << ERROR_MSG << std::endl;
 }
 
-void Karen::complain(std::string level)
+int Karen::index(std::string level)
 {
 	int	i;
 
 	i = 0;
 	while ((levels[i].compare(level) != 0) && i < 4)
 		i++;
-	if (i >= 4)
-	{
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return ;
-	}
+	return (i);
+}
+
+void Karen::complain(int i)
+{
+	std::string	level;
+
+	level = levels[i];
+	std::cout << "[ " << level << " ]" << std::endl;
 	(this->*myArr[i])();
+	std::cout << std::endl;
 }

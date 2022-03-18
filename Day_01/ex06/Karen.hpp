@@ -21,7 +21,8 @@ class Karen
 		Karen(void);
 		~Karen(void);
 
-		void complain(std::string level);
+		void complain(int i);
+		int index(std::string level);
 		
 	private:
 		void _debug(void);
