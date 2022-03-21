@@ -11,9 +11,7 @@ Fixed::Fixed(void)
 Fixed::Fixed(Fixed const &other)
 {
 	std::cout << "Copy constructor called, address :" << this << std::endl;
-	this->_nbStock = other._nbStock;
-	this->_floatFix = other._floatFix;
-	this->_intFix= other._intFix;
+	*this = other;
 }
 
 Fixed::Fixed(const int my_int)
