@@ -3,13 +3,8 @@
 Ice::Ice(void)
 {
 	std::cout << "Default constructer of the class Ice called. Adress :" << this << std::endl;
-	this->_type = "";
-}
+	this->_type = "ice";
 
-Ice::Ice(std::string const & type)
-{
-	std::cout << "Copy constructor of the class Ice called, address :" << this << std::endl;
-	this->_type = type;
 }
 
 Ice::Ice(Ice const &other)
@@ -26,23 +21,17 @@ Ice::~Ice(void)
 Ice & Ice::operator = (const Ice &other)
 {
 	std::cout << "Copy assignment operator of Ice called, address :" << this << std::endl;	
-	this->_type = other._type ;
 	return (*this);
 }
 
 Ice*  Ice::clone(void) const
 {
-	Ice *ptr = new Ice(this->_type);
+	Ice *ptr = new Ice();
 	std::cout << "Ice is clonned!" << std::endl;	
 	return (ptr);
 }
 
-std::string const &  Ice::getType() const
-{
-	return (this->_type);
-}
-
 void  Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at "<< target.getName() <<std::endl;
+	std::cout << "* shoots an ice bolt at "<< target.getName() << " *" <<std::endl;
 }

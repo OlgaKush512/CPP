@@ -1,15 +1,13 @@
 # include "AMateria.hpp"
 
-AMateria::AMateria(void)
+AMateria::AMateria(void) : _type("")
 {
 	std::cout << "Default constructer of the class AMateria called. Adress :" << this << std::endl;
-	this->_type = "";
 }
 
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const & type) : _type(type)
 {
-	std::cout << "Copy constructor of the class AMateria called, address :" << this << std::endl;
-	this->_type = type;
+	std::cout << "Parametric constructor of the class AMateria called, address :" << this << std::endl;
 }
 
 AMateria::AMateria(AMateria const &other)

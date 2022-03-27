@@ -14,15 +14,15 @@ class AMateria
 	AMateria(std::string const & type);
 	AMateria(AMateria const &other);
 	
-	virtual ~AMateria(void);
-
 	AMateria & operator = (const AMateria &other);
 
-	virtual std::string const & getType() const;
+	virtual ~AMateria(void);
+
+	std::string const & getType() const;
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
 
-	private:
+	protected:
 
 	std::string _type;
 };

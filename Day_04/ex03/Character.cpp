@@ -3,30 +3,51 @@
 Character::Character(void)
 {
 	std::cout << "Default constructer of the class Character called. Adress :" << this << std::endl;
-	this->_name = "";
+	for (int i = 0; i < 4; i++)
+		this->_inventary[i] = 0;
 }
 
-Character::Character(std::string const & name)
+Character::Character(std::string const & name) : _name(name)
 {
 	std::cout << "Copy constructor of the class Character called, address :" << this << std::endl;
-	this->_name = name;
+	for (int i = 0; i < 4; i++)
+		this->_inventary[i] = 0;
 }
 
 Character::Character(Character const &other)
 {
 	std::cout << "Copy constructor of the class Character called, address :" << this << std::endl;
-	*this = other;
+	for (int i = 0; i < 4; i++)
+		this->_inventary[i] = 0;
+	for (int i = 0; i < 4 && other._inventary[i]; i++)
+		this->_inventary[i] = other._inventary[i]->clone();
+	this->_name = other._name;
 }
 
 Character::~Character(void)
 {
 	std::cout << "Destructeur of Character called. Adress :" << this << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventary[i])
+			delete this->_inventary[i];
+	}
 }
 
 Character & Character::operator = (const Character &other)
 {
 	std::cout << "Copy assignment operator of Character called, address :" << this << std::endl;	
 	this->_name = other._name ;
+
+	for (int i = 0; i < 4 && this->_inventary[i]; i++)
+		delete this->_inventary[i];
+	for (int i = 0; i < 4; i++)
+		this->_inventary[i] = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		if (other._inventary[i])
+			this->_inventary[i] = other._inventary[i]->clone();
+	}
 	return (*this);
 }
 
@@ -35,10 +56,27 @@ std::string const & Character::getName() const
 	return (this->_name);
 }
 
-void Character::use(int idx, Character& target) //?
+void Character::use(int idx, ICharacter& target)
 {
-	std::cout << "* shoots an Character bolt at "<< target.getName() <<std::endl;
+	if (idx >= 0 && idx <= 3 && this->_inventary[idx])
+		this->_inventary[idx]->use(target);
 }
 
-void Character::equip(AMateria* m); //?
-void Character::unequip(int idx); //?
+void Character::equip(AMateria* m)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (!(this->_inventary[i]))
+		{
+			this->_inventary[i] = m;
+			break ;
+		}
+	}
+	
+}
+
+void Character::unequip(int idx)
+{
+	if ((this->_inventary[idx]))
+		this->_inventary[idx] = nullptr;
+}
