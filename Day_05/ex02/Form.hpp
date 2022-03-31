@@ -31,11 +31,11 @@ class Form
 
 		virtual void	execute(Bureaucrat const & executor) const = 0;
 
-		void		beSigned(const Bureaucrat &myBureaucrat);
-		std::string	getName(void) const;
-		int			getGradeSign(void) const;
-		int			getGradeExec(void) const;
-		bool		isSigned(void) const;
+		virtual void		beSigned(const Bureaucrat &myBureaucrat);
+		std::string			getName(void) const;
+		virtual int			getGradeSign(void) const;
+		virtual int			getGradeExec(void) const;
+		virtual bool		isSigned(void) const;
 
 	private:
 

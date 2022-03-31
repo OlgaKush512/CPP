@@ -49,6 +49,34 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 	return (this->_target);
 }
 
+std::string	Form::getName(void) const
+{
+	return (this->_name);
+}
+
+int			Form::getGradeSign(void) const
+{
+	return (this->_gradeSign);
+}
+
+int			Form::getGradeExec(void) const
+{
+	return (this->_gradeExec);
+}
+
+bool		Form::isSigned(void) const
+{
+	return (this->_signed);
+}
+
+void		Form::beSigned(const Bureaucrat &myBureaucrat)
+{
+	if (myBureaucrat.getGrade() <= this->_gradeSign)
+		this->_signed = true;
+	else
+		throw Form::GradeTooLowException();
+}
+
 void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::ofstream	fout;

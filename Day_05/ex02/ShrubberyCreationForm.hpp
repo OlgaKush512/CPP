@@ -52,6 +52,11 @@ class ShrubberyCreationForm : public Form
 		void		execute(Bureaucrat const & executor) const;
 
 		std::string	getTarget(void) const;
+		void		beSigned(const Bureaucrat &myBureaucrat);
+		std::string	getName(void) const;
+		int			getGradeSign(void) const;
+		int			getGradeExec(void) const;
+		bool		isSigned(void) const;
 
 	private:
 
