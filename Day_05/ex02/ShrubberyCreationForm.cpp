@@ -1,41 +1,27 @@
 #include "ShrubberyCreationForm.hpp"
 
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : _gradeSign(0), _gradeExec(0), _name("")
+ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137)
 {
+	this->_target = "target_name";
 	std::cout << "Default constructor of the class ShrubberyCreationForm called, address :" << this << std::endl;
 }
 
-const char * ShrubberyCreationForm::GradeTooHighException::what(void) const throw()
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137)
 {
-	return ("ShrubberyCreationForm::GradeTooHighException");
-}
-
-const char * ShrubberyCreationForm::GradeTooLowException::what(void) const throw()
-{
-	return ("ShrubberyCreationForm::GradeTooLowException");
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target, int gradeSign, int gradeExec) : _gradeSign(gradeSign), _gradeExec(gradeExec), _target(target)
-{
-	if ((gradeSign < 1) || (gradeExec < 1))
-		throw ShrubberyCreationForm::GradeTooHighException();
-	if ((gradeSign > 145) || (gradeExec > 137))
-		throw ShrubberyCreationForm::GradeTooLowException();
-	this->_signed = false;
-	// this->_name = Form::getName();
+	this->_target = target;
 	std::cout << "Parametric constructor of the class ShrubberyCreationForm called, address :" << this << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other) : _gradeSign(other._gradeSign), _gradeExec(other._gradeExec), _target(other._target)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other) : Form("ShrubberyCreationForm", 145, 137)
 {
 	std::cout << "Copy constructor of the class ShrubberyCreationForm called, address :" << this << std::endl;
-	this->_signed = other._signed;
+	this->_target = other._target;
 }
 ShrubberyCreationForm & ShrubberyCreationForm::operator = (const ShrubberyCreationForm &other)
 {
 	std::cout << "Copy assignment operator of the class ShrubberyCreationForm called, address :" << this << std::endl;	
-	this->_signed = other._signed;
+	this->_target = other._target;
 	return (*this);
 }
 
@@ -49,41 +35,13 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 	return (this->_target);
 }
 
-std::string	Form::getName(void) const
-{
-	return (this->_name);
-}
-
-int			Form::getGradeSign(void) const
-{
-	return (this->_gradeSign);
-}
-
-int			Form::getGradeExec(void) const
-{
-	return (this->_gradeExec);
-}
-
-bool		Form::isSigned(void) const
-{
-	return (this->_signed);
-}
-
-void		Form::beSigned(const Bureaucrat &myBureaucrat)
-{
-	if (myBureaucrat.getGrade() <= this->_gradeSign)
-		this->_signed = true;
-	else
-		throw Form::GradeTooLowException();
-}
-
 void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::ofstream	fout;
 	std::string 	path;
 
 	path = this->_target + "_shrubbery";
-	if ((this->_signed == true) && (executor.getGrade() <= this->_gradeExec))
+	if ((isSigned() == true) && (executor.getGrade() <= 137))
 	{
 		try
 		{
@@ -98,22 +56,22 @@ void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 			std::cerr << "Error: " << e.what() << std::endl;
 		}
 	}
-	else if (executor.getGrade() > this->_gradeExec)
+	else if (executor.getGrade() > 137)
 	{
 		throw ShrubberyCreationForm::GradeTooLowException();
 		std::cout << this->_target << "_shrubbery file is not created because the grade of " << executor.getName() << " is not signed." << std::endl;
 	}
 	else
 	{
-		std::cout << executor.getName() << " couldn’t execute "<< this->_target << "because the form is not signed." << std::endl;
+		std::cout << executor.getName() << " couldnt execute "<< this->_target << "because the form is not signed." << std::endl;
 	}
 }
 
 std::ostream& operator << (std::ostream &out, const ShrubberyCreationForm &myShrubberyCreationForm)
 {
-	out << myShrubberyCreationForm.getTarget() << ", grade required to sign it:"
-	<< myShrubberyCreationForm.getGradeSign() << std::endl 
-	<< "grade required to execute it:" << myShrubberyCreationForm.getGradeExec() << std::endl
+	out << "Name: " << myShrubberyCreationForm.getName() << std::endl
+	<< "Grade required to sign it: " << myShrubberyCreationForm.getGradeSign() << std::endl 
+	<< "Grade required to execute it: " << myShrubberyCreationForm.getGradeExec() << std::endl
 	<< "Target: " << myShrubberyCreationForm.getTarget() << std::endl
 	<< "Signature: " << myShrubberyCreationForm.isSigned() << "." << std::endl;
 	return (out);

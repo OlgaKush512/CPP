@@ -21,12 +21,12 @@ class Form
 
 		class GradeTooHighException : public std::exception
 		{
-			const char* what(void) const throw();
+			virtual const char* what(void) const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
-			const char* what(void) const throw();
+			virtual const char* what(void) const throw();
 		};
 
 		virtual void	execute(Bureaucrat const & executor) const = 0;
@@ -36,6 +36,7 @@ class Form
 		virtual int			getGradeSign(void) const;
 		virtual int			getGradeExec(void) const;
 		virtual bool		isSigned(void) const;
+
 
 	private:
 

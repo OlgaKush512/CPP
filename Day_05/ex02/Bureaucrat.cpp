@@ -67,30 +67,24 @@ void Bureaucrat::signForm(Form &myForm)
 		}
 		catch (std::exception & e)
 		{
-			std::cerr << e.what() << std::endl;
 			std::cout << this->getName() << " couldn’t sign the form because bureaucrat’s grade is too low" << std::endl;	
+			std::cerr << "Error: " << e.what() << std::endl;
 		}
 	}
 }
 
 void	Bureaucrat::executeForm(Form const & form)
 {
-	if (!form.isSigned())
+	try
 	{
-		std::cout << this->getName() << " couldn’t execute "<< form.getName() << "because the form is not signed." << std::endl;
+		form.execute(*this);
+		std::cout << this->getName() << " executed "<< form.getName() << std::endl;	
 	}
-	else
+	catch (std::exception & e)
 	{
-		try
-		{
-			form.execute(*this);
-			std::cout << this->getName() << " signed "<< form.getName() << std::endl;	
-		}
-		catch (std::exception & e)
-		{
-			std::cerr << e.what() << std::endl;
-			std::cout << this->getName() << " couldn’t sign "<< form.getName() << "because bureaucrat’s grade is too low" << std::endl;	
-		}
+		std::cout << this->getName() << " couldn’t execute "<< form.getName() << " because bureaucrat’s grade is too low." << std::endl;	
+		std::cerr << "Error: " << e.what() << std::endl;
+
 	}
 }
 
