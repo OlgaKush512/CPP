@@ -2,8 +2,6 @@
 # define ARRAY_HPP
 
 # include <iostream>
-# include <string>
-# include <iomanip>
 # include <exception>
 
 template<typename T>
