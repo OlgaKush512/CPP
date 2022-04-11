@@ -1,6 +1,6 @@
 # include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << "Default constructer of ScavTrap called. Adress :" << this << std::endl;
 	this->_name = "";
@@ -9,7 +9,7 @@ ScavTrap::ScavTrap(void)
 	this->_attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Main constructer of ScavTrap called. Adress :" << this << std::endl;
 	this->_name = name;
@@ -41,7 +41,7 @@ ScavTrap & ScavTrap::operator = (const ScavTrap &other)
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (_notAnction())
+	if (_notAction())
 		return;
 	std::cout << "The Robot ScavTrap " << this->_name <<
 	" attacks " << target<< ", causing " <<

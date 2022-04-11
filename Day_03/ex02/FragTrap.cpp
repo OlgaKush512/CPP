@@ -1,6 +1,6 @@
 # include "FragTrap.hpp"
 
-FragTrap::FragTrap(void)
+FragTrap::FragTrap(void) : ClapTrap()
 {
 	std::cout << "Default constructer of FragTrap called. Adress :" << this << std::endl;
 	this->_name = "";
@@ -9,7 +9,7 @@ FragTrap::FragTrap(void)
 	this->_attackDamage = 30;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Main constructerof FragTrap called. Adress :" << this << std::endl;
 	this->_name = name;

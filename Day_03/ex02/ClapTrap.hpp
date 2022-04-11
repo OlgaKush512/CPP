@@ -3,7 +3,6 @@
 
 # include <iostream>
 # include <string>
-# include <cmath>
 
 class ClapTrap
 {
@@ -28,7 +27,7 @@ class ClapTrap
 	int _energyPoints;
 	int _attackDamage;
 
-	bool	_notAnction(void);
+	bool	_notAction(void);
 };
 
 #endif

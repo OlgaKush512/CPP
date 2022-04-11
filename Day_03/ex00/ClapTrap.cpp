@@ -1,21 +1,13 @@
 # include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "Default constructer called. Adress :" << this << std::endl;
-	this->_name = "";
-	this->_hitPoints = 10;
-	this->_energyPoints = 10;
-	this->_attackDamage = 0;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Main constructer called. Adress :" << this << std::endl;
-	this->_name = name;
-	this->_hitPoints = 10;
-	this->_energyPoints = 10;
-	this->_attackDamage = 0;
+	std::cout << "Parametric constructer called. Adress :" << this << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &other)
@@ -39,24 +31,24 @@ ClapTrap & ClapTrap::operator = (const ClapTrap &other)
 	return (*this);
 }
 
-bool	ClapTrap::_notAnction(void)
+bool	ClapTrap::_notAction(void)
 {
 	if (this->_hitPoints == 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is dead!"<< std::endl;
-		return (1);
+		return (true);
 	}
 	if (this->_energyPoints == 0)
 	{
 		std::cout << "Not enough energy points for action!"<< std::endl;
-		return (1);
+		return (true);
 	}
-	return (0);
+	return (false);
 }
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (_notAnction())
+	if (_notAction())
 		return;
 	std::cout << "ClapTrap " << this->_name <<
 	" attacks " << target<< ", causing " <<
@@ -66,7 +58,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (_notAnction())
+	if (_notAction())
 		return;
 	this->_hitPoints -= amount;
 	std::cout << "ClapTrap " << this->_name <<
@@ -75,7 +67,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_notAnction())
+	if (_notAction())
 		return;
 	this->_hitPoints += amount;
 	this->_energyPoints--;
