@@ -69,6 +69,8 @@
 		"locale": "cpp",
 		"mutex": "cpp",
 		"ratio": "cpp",
-		"hashtable": "cpp"
+		"hashtable": "cpp",
+		"list": "cpp",
+		"map": "cpp"
 	}
 }

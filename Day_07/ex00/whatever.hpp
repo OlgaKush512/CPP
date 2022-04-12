@@ -2,8 +2,6 @@
 # define WHATEVER_HPP
 
 # include <iostream>
-# include <string>
-# include <stdlib.h>
 
 template <typename T>
 void swap(T &x, T &y)
@@ -14,6 +12,7 @@ void swap(T &x, T &y)
 	x = y;
 	y = temp;
 }
+
 template <typename T>
 T const min(T const &x, T const &y)
 {

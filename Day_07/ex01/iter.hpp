@@ -2,11 +2,9 @@
 # define ITER_HPP
 
 # include <iostream>
-# include <string>
-# include <stdlib.h>
 
-template <typename T, typename U, typename M>
-void iter(T x, int size, U (*fonc)(M))
+template <typename T>
+void iter(T *x, int size, void (*fonc)(T)) //a voir
 {
 	for (int i = 0; i < size; i++)
 		fonc(x[i]);
