@@ -1,7 +1,7 @@
-NAME		= account
+NAME		= phonebook
 
-SRCS		=	Account.cpp tests.cpp
-HEADER		=	Account.hpp
+SRCS		=	Contact.cpp PhoneBook.cpp main.cpp
+HEADER		= 	Contact.hpp PhoneBook.hpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
