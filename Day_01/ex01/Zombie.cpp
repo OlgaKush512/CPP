@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 18:20:22 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/14 18:20:24 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie::Zombie(void) : _name("New Zombie")
 {
 	std::cout << "Constructor default class Zombie called."<< std::endl;
 	return;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 18:26:30 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/14 18:26:32 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -23,10 +35,9 @@ int main(int argc, char **argv)
 {
 	std::ifstream	fin;
 	std::ofstream	fout;
-	std::string 	path;
+	const char * 	path;
 	std::string 	s1;
 	std::string		s2;
-	char			ch;
 	std::string		buf;
 	std::stringstream		ss;
 
@@ -41,7 +52,8 @@ int main(int argc, char **argv)
 			std::cout<< "File open error!" << std::endl;
 		else
 		{
-			path = (std::string)argv[1] + ".replace";
+			std::string temp = (std::string)argv[1] + ".replace";
+			path = temp.c_str();
 			fout.open(path);
 			s1 = argv[2];
 			s2 = argv[3];

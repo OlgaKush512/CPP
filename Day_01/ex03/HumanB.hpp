@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 18:25:48 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/14 18:25:50 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HUMAN_B_HPP
 # define HUMAN_B_HPP
 
@@ -14,11 +26,11 @@ class HumanB
 		~HumanB(void);
 
 		void attack(void);
-		void setWeapon(Weapon theWeapon);
+		void setWeapon(Weapon &theWeapon);
 
 	private:
-		Weapon		*_myWeapon;
 		std::string	_myName;
+		Weapon		*_myWeapon;
 
 };
 

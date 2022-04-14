@@ -1,10 +1,14 @@
-NAME		= ex05
+NAME		=	ex03
 
-SRCS		= main.cpp Karen.cpp
+SRCS		=	main.cpp Harl.cpp
+
+HEADER		=	Harl.hpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-CC			= clang++
+DEPENDENCES	= $(OBJS:.o=.d)
+
+CC			= c++
 
 RM			= rm -rf
 
@@ -16,8 +20,11 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
+%.o : %.cpp $(HEADER)
+		$(CC) $(CFLAGS) -MMD -o $@ -c $< 
+
 clean:		
-			$(RM) $(OBJS)	
+			$(RM) $(OBJS) $(DEPENDENCES)	
 
 fclean:		clean
 			$(RM) $(NAME)

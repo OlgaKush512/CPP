@@ -1,25 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 18:25:41 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/14 18:25:43 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "HumanB.hpp"
 
 HumanB::HumanB(std::string theName)
 {
 	this->_myName = theName;
-	std::cout << "Constructor class HumanB called. Name : " << this->_myName;
+	this->_myWeapon = NULL;
+	std::cout << "Constructor class HumanB called. Name : " << this->_myName << std::endl;
 	return ;
 }
 
 HumanB::~HumanB(void)
 {
-	delete this->_myWeapon;
 	std::cout << "Destructor class HumanB called. Name : " << this->_myName << std::endl;
 	return ;
 }
 
 void HumanB::attack(void)
 {
-	std::cout <<  this->_myName << " attacks with their " << this->_myWeapon->getType() << std::endl;
+	if (this->_myWeapon)
+		std::cout <<  this->_myName << " attacks with their " << this->_myWeapon->getType() << std::endl;
+	else
+		std::cout <<  this->_myName << " haven't their weapon :( " << std::endl;
 }
 
-void HumanB::setWeapon(Weapon theWeapon)
+void HumanB::setWeapon(Weapon &theWeapon)
 {
-	this->_myWeapon = new Weapon(theWeapon);
+	this->_myWeapon = &theWeapon;
 }

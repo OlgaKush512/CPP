@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 18:20:38 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/14 18:20:42 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
@@ -18,7 +30,7 @@ class Zombie
 
 	private:
 
-		std::string	name;
+		std::string	_name;
 };
 
 Zombie* zombieHorde(int N, std::string name);
