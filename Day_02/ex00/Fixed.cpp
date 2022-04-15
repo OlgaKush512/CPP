@@ -1,12 +1,11 @@
 # include "Fixed.hpp"
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _nbStock(0)
 {
 	std::cout << "Default constructer called. Adress :" << this << std::endl;
-	this->_nbStock = 0;
 }
 
-Fixed::Fixed(Fixed const &other)
+Fixed::Fixed(Fixed const &other) : _nbStock(other.getRawBits())
 {
 	std::cout << "Copy constructor called, address :" << this << std::endl;
 	this->_nbStock = other.getRawBits();

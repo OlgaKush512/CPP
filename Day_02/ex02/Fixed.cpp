@@ -4,10 +4,9 @@
 /*------------------CONSTRUCTORS----------------------------------*/
 /*----------------------------------------------------------------*/
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _nbStock(0)
 {
 	std::cout << "Default constructer called. Adress :" << this << std::endl;
-	this->_nbStock = 0;
 }
 
 Fixed::Fixed(Fixed const &other)
@@ -16,18 +15,14 @@ Fixed::Fixed(Fixed const &other)
 	*this = other;
 }
 
-Fixed::Fixed(const int my_int)
+Fixed::Fixed(const int my_int) : _nbStock(my_int << this->_nbBits)
 {
 	std::cout << "Int constructor called, address :" << this << std::endl;
-	this->_nbStock = 0;
-	this->_nbStock = (my_int << this->_nbBits);
 }
 
-Fixed::Fixed(const float my_float)
+Fixed::Fixed(const float my_float) : _nbStock(my_float * (float)256)
 {
 	std::cout << "Float constructor called, address :" << this << std::endl;
-	this->_nbStock = 0;
-	this->_nbStock = roundf(my_float * (float)256);
 }
 
 Fixed::~Fixed(void)
@@ -142,30 +137,34 @@ Fixed	Fixed::operator / (const Fixed &other)
 
 Fixed & Fixed::operator ++ (void)
 {
+	std::cout << "Copy '++' operator called, address :" << this << std::endl;
 	this->_nbStock += 1;
 	return (*this);
 }
 
-Fixed & Fixed::operator ++ (int value)
+Fixed Fixed::operator ++ (int value)
 {
-	Fixed	*temp;
-	temp = new Fixed(*this);
+	(void)value;
+	std::cout << "Copy '++' operator called, address :" << this << std::endl;
+	Fixed	temp(*this);
 	this->_nbStock += 1;
-	return (*temp);
+	return (temp);
 }
 
 Fixed & Fixed::operator -- (void)
 {
+	std::cout << "Copy '--' operator called, address :" << this << std::endl;
 	this->_nbStock -= 1;
 	return (*this);
 }
 
-Fixed & Fixed::operator -- (int value)
+Fixed Fixed::operator -- (int value)
 {
-	Fixed	*temp;
-	temp = new Fixed(*this);
+	(void) value;
+	std::cout << "Copy '--' operator called, address :" << this << std::endl;
+	Fixed	temp(*this);
 	this->_nbStock -= 1;
-	return (*temp);
+	return (temp);
 }
 
 /*----------------------------------------------------------------*/
