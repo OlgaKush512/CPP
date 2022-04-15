@@ -26,7 +26,7 @@ std::string	my_replace(std::string str, std::string s1, std::string s2)
 	{	
 		str.erase(found, s1.length());
 		str.insert(found, s2);
-		found = str.find(s1, found + 1);
+		found = str.find(s1, found + s2.size());
 	}
 	return (str);
 }
@@ -43,7 +43,10 @@ int main(int argc, char **argv)
 
 
 	if (argc != 4)
+	{
 		std::cout << "Enter <filename>, string 1, sring 2" << std::endl;
+		return (1);
+	}
 	else
 	{
 		path = argv[1];

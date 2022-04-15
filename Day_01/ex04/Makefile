@@ -1,16 +1,16 @@
-NAME		= ex03
+NAME		=	ex04
 
 SRCS		=	main.cpp
 
-OBJS		= $(SRCS:.cpp=.o)
+OBJS		=	$(SRCS:.cpp=.o)
 
-DEPENDENCES	= $(OBJS:.o=.d)
+DEPENDENCES	=	$(OBJS:.o=.d)
 
-CC			= c++
+CC			=	c++
 
-RM			= rm -rf
+RM			=	rm -rf
 
-CFLAGS		= -Wall -Wextra  -Werror -std=c++98 -g
+CFLAGS		=	-Wall -Wextra  -Werror -std=c++98
 
 all:		$(NAME)
 
@@ -22,7 +22,7 @@ $(NAME):	$(OBJS)
 		$(CC) $(CFLAGS) -MMD -o $@ -c $< 
 
 clean:		
-			$(RM) $(OBJS) $(DEPENDENCES)	
+			$(RM) $(OBJS) $(DEPENDENCES) *.replace
 
 fclean:		clean
 			$(RM) $(NAME)

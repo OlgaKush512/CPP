@@ -12,18 +12,14 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string theName)
+HumanB::HumanB(std::string theName) : _myName(name), _myWeapon(NULL)
 {
-	this->_myName = theName;
-	this->_myWeapon = NULL;
 	std::cout << "Constructor class HumanB called. Name : " << this->_myName << std::endl;
-	return ;
 }
 
 HumanB::~HumanB(void)
 {
 	std::cout << "Destructor class HumanB called. Name : " << this->_myName << std::endl;
-	return ;
 }
 
 void HumanB::attack(void)

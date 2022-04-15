@@ -1,18 +1,18 @@
-NAME		=	ex03
+NAME		=	ex05
 
 SRCS		=	main.cpp Harl.cpp
 
 HEADER		=	Harl.hpp
 
-OBJS		= $(SRCS:.cpp=.o)
+OBJS		=	$(SRCS:.cpp=.o)
 
-DEPENDENCES	= $(OBJS:.o=.d)
+DEPENDENCES	=	$(OBJS:.o=.d)
 
-CC			= c++
+CC			=	c++
 
-RM			= rm -rf
+RM			=	rm -rf
 
-CFLAGS		= -Wall -Wextra  -Werror -std=c++98 -g
+CFLAGS		=	-Wall -Wextra  -Werror -std=c++98 -g
 
 all:		$(NAME)
 

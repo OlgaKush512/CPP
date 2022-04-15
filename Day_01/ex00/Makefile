@@ -1,17 +1,18 @@
-NAME		= ex00
+NAME		= 	ex00
 
 SRCS		=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+
 HEADER		=	Zombie.hpp
 
-OBJS		= $(SRCS:.cpp=.o)
+OBJS		= 	$(SRCS:.cpp=.o)
 
-DEPENDENCES	= $(OBJS:.o=.d)
+DEPENDENCES	= 	$(OBJS:.o=.d)
 
-CC			= c++
+CC			=	c++
 
-RM			= rm -rf
+RM			= 	rm -rf
 
-CFLAGS		= -Wall -Wextra  -Werror -std=c++98
+CFLAGS		= 	-Wall -Wextra  -Werror -std=c++98
 
 all:		$(NAME)
 
