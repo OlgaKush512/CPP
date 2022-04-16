@@ -5,28 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 16:13:34 by okushnir          #+#    #+#             */
-/*   Updated: 2022/04/16 16:13:36 by okushnir         ###   ########.fr       */
+/*   Created: 2022/04/16 16:17:15 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/16 16:17:17 by okushnir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Fixed.hpp"
+# include "Point.hpp"
 
 int main( void )
 {
-	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
-	a = Fixed( 1234.4321f );
+	Point point(4, 4);
+	Point point1(0, 10);
+	Point point2(-2, 7);
 
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	return (0);
+
+	Point t_a(1,2);
+	Point t_b(1,8);
+	Point t_c(8,4);
+
+	std::cout << "Point with x: " << point.getX() << " and y: "  << point.getY() << " in the triangle: " << bsp(t_a, t_b, t_c, point) << std::endl;
+	std::cout << "Point with x: " << point1.getX() << " and y: " << point1.getY() << " in the triangle: " << bsp(t_a, t_b, t_c, point1) << std::endl;
+	std::cout << "Point with x: " << point2.getX() << " and y: " << point2.getY() << " in the triangle: " << bsp(t_a, t_b, t_c, point2) << std::endl;
+	return 0;
 }

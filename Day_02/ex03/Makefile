@@ -1,8 +1,8 @@
-NAME		= 	ex02
+NAME		= 	ex03
 
-SRCS		=	main.cpp Fixed.cpp
+SRCS		=	main.cpp Fixed.cpp Point.cpp bsp.cpp
 
-HEADER		=	Fixed.hpp
+HEADER		=	Fixed.hpp Point.hpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
