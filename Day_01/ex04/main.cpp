@@ -49,10 +49,20 @@ int main(int argc, char **argv)
 	}
 	else
 	{
+		s1 = argv[2];
+		s2 = argv[3];
 		path = argv[1];
 		fin.open(path);
 		if (!fin.is_open())
+		{
 			std::cout<< "File open error!" << std::endl;
+			return (1);
+		}
+		else if (s1.empty() && s2.empty())
+		{
+			std::cout<< "Error: the both strings are empty!" << std::endl;
+			return (1);
+		}
 		else
 		{
 			std::string temp = (std::string)argv[1] + ".replace";

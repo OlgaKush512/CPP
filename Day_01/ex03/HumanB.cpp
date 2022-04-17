@@ -12,7 +12,7 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string theName) : _myName(name), _myWeapon(NULL)
+HumanB::HumanB(std::string theName) : _myName(theName), _myWeapon(NULL)
 {
 	std::cout << "Constructor class HumanB called. Name : " << this->_myName << std::endl;
 }
