@@ -58,9 +58,9 @@ int main(int argc, char **argv)
 			std::cout<< "File open error!" << std::endl;
 			return (1);
 		}
-		else if (s1.empty() && s2.empty())
+		else if (s1.empty())
 		{
-			std::cout<< "Error: the both strings are empty!" << std::endl;
+			std::cout<< "Error: the first string is empty!" << std::endl;
 			return (1);
 		}
 		else
