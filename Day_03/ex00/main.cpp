@@ -16,10 +16,10 @@ int main(void)
 {
 	ClapTrap cl("Nick");
 
-	for (int i = 0; i < 12; i++)
+	for (int i = 0; i < 3; i++)
 	{
-		cl.attack("pistolet");
-		cl.takeDamage(10);
+		cl.attack("kiwi");
+		cl.takeDamage(6);
 		cl.beRepaired(4);
 	}
 	return (0);

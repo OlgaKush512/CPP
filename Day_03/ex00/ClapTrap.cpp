@@ -14,12 +14,12 @@
 
 ClapTrap::ClapTrap(void) : _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Default constructer of the class ClapTrap called. Adress : " << this << std::endl;
+	std::cout << "Default constructor of the class ClapTrap called. Adress : " << this << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Parametric constructer of the class ClapTrap called. Adress : " << this << std::endl;
+	std::cout << "Parametric constructor of the class ClapTrap called. Adress : " << this << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &other)
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(ClapTrap const &other)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructeur of the class ClapTrap called. Adress : " << this << std::endl;
+	std::cout << "Destructor of the class ClapTrap called. Adress : " << this << std::endl;
 }
 
 ClapTrap & ClapTrap::operator = (const ClapTrap &other)
@@ -72,6 +72,8 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_notAction())
 		return;
+	if (this->_hitPoints < amount)
+		amount = this->_hitPoints;
 	this->_hitPoints -= amount;
 	std::cout << "ClapTrap " << this->_name <<
 	" lost " << amount<< " hit points!" << std::endl;
