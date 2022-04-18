@@ -13,9 +13,6 @@
 #ifndef HUMAN_B_HPP
 # define HUMAN_B_HPP
 
-#include <iostream>
-#include <string>
-#include <cctype>
 #include "Weapon.hpp"
 
 class HumanB
