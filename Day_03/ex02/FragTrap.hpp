@@ -26,7 +26,7 @@ class FragTrap : public ClapTrap
 	FragTrap(std::string name);
 
 	FragTrap(FragTrap const &other);
-	~FragTrap(void);
+	virtual ~FragTrap(void);
 
 	FragTrap & operator = (const FragTrap &other);
 

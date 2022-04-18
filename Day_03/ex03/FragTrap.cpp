@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 19:13:22 by okushnir          #+#    #+#             */
-/*   Updated: 2022/04/18 19:13:24 by okushnir         ###   ########.fr       */
+/*   Created: 2022/04/18 23:05:50 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/18 23:05:52 by okushnir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ FragTrap::~FragTrap(void)
 
 FragTrap & FragTrap::operator = (const FragTrap &other)
 {
-	std::cout << "Copy assignment operator of the class FragTrap called, address : " << this << std::endl;	
-	this->_name = other._name ;
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
+	std::cout << "Copy assignment operator of the class FragTrap called, address : " << this << std::endl;
+	if (this != &other)
+		this->ClapTrap::operator=(other);
 	return (*this);
 }
 

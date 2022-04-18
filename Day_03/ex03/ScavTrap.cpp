@@ -6,7 +6,7 @@
 /*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:11:55 by okushnir          #+#    #+#             */
-/*   Updated: 2022/04/18 19:11:56 by okushnir         ###   ########.fr       */
+/*   Updated: 2022/04/18 23:06:24 by okushnir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,8 @@ ScavTrap::~ScavTrap(void)
 ScavTrap & ScavTrap::operator = (const ScavTrap &other)
 {
 	std::cout << "Copy assignment operator of the class ScavTrap called, address : " << this << std::endl;	
-	this->_name = other._name ;
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
+	if (this != &other)
+		this->ClapTrap::operator=(other);
 	return (*this);
 }
 

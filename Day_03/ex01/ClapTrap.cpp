@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 19:11:29 by okushnir          #+#    #+#             */
-/*   Updated: 2022/04/18 19:11:33 by okushnir         ###   ########.fr       */
+/*   Created: 2022/04/18 23:02:48 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/18 23:02:50 by okushnir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,15 @@ ClapTrap::~ClapTrap(void)
 
 ClapTrap & ClapTrap::operator = (const ClapTrap &other)
 {
-	std::cout << "Copy assignment operator of the class ClapTrap called, address : " << this << std::endl;	
-	this->_name = other._name ;
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
+	std::cout << "Copy assignment operator of the class ClapTrap called, address : " << this << std::endl;
+	if (this != &other)
+		this->ClapTrap::operator=(other);
 	return (*this);
 }
 
 bool	ClapTrap::_notAction(void)
 {
-	if (this->_hitPoints == 0)
+	if (this->_hitPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is dead!"<< std::endl;
 		return (true);
