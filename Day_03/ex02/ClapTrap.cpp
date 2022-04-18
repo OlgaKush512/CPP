@@ -36,8 +36,10 @@ ClapTrap::~ClapTrap(void)
 ClapTrap & ClapTrap::operator = (const ClapTrap &other)
 {
 	std::cout << "Copy assignment operator of the class ClapTrap called, address : " << this << std::endl;
-	if (this != &other)
-		this->ClapTrap::operator=(other);
+	this->_name = other._name ;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
 	return (*this);
 }
 

@@ -1,9 +1,8 @@
 # include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal(void) : type("Someone")
 {
 	std::cout << "Default constructer of the class Animal called. Adress :" << this << std::endl;
-	this->type = "Someone";
 }
 
 Animal::Animal(Animal const &other)
@@ -20,7 +19,7 @@ Animal::~Animal(void)
 Animal & Animal::operator = (const Animal &other)
 {
 	std::cout << "Copy assignment operator of Animal called, address :" << this << std::endl;	
-	this->type = other.type ;
+	this->type = other.type;
 	return (*this);
 }
 

@@ -21,6 +21,7 @@ void	test(ClapTrap &te)
 int main(void)
 {
 	ScavTrap sk("Nick");
+	ScavTrap mk = sk;
 
 	for (int i = 0; i < 2; i++)
 	{
