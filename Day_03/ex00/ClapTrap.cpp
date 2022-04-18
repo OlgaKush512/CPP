@@ -1,29 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/18 19:10:30 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/18 19:10:33 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void) : _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Default constructer called. Adress :" << this << std::endl;
+	std::cout << "Default constructer called. Adress : " << this << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Parametric constructer called. Adress :" << this << std::endl;
+	std::cout << "Parametric constructer called. Adress : " << this << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &other)
 {
-	std::cout << "Copy constructor called, address :" << this << std::endl;
+	std::cout << "Copy constructor called, address : " << this << std::endl;
 	*this = other;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructeur called. Adress :" << this << std::endl;
+	std::cout << "Destructeur called. Adress : " << this << std::endl;
 }
 
 ClapTrap & ClapTrap::operator = (const ClapTrap &other)
 {
-	std::cout << "Copy assignment operator called, address :" << this << std::endl;	
+	std::cout << "Copy assignment operator called, address : " << this << std::endl;	
 	this->_name = other._name ;
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;

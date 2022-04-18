@@ -23,8 +23,8 @@ int main( void )
 	Point t_b(1,8);
 	Point t_c(8,4);
 
-	std::cout << "Point with x: " << point.getX() << " and y: "  << point.getY() << " in the triangle: " << bsp(t_a, t_b, t_c, point) << std::endl;
-	std::cout << "Point with x: " << point1.getX() << " and y: " << point1.getY() << " in the triangle: " << bsp(t_a, t_b, t_c, point1) << std::endl;
-	std::cout << "Point with x: " << point2.getX() << " and y: " << point2.getY() << " in the triangle: " << bsp(t_a, t_b, t_c, point2) << std::endl;
+	std::cout << "Point with x: " << point.getX() << " and y: "  << point.getY() << " in the triangle: " << (bsp(t_a, t_b, t_c, point) ? "True" : "False") << std::endl;
+	std::cout << "Point with x: " << point1.getX() << " and y: " << point1.getY() << " in the triangle: " << (bsp(t_a, t_b, t_c, point1) ? "True" : "False") << std::endl;
+	std::cout << "Point with x: " << point2.getX() << " and y: " << point2.getY() << " in the triangle: " << (bsp(t_a, t_b, t_c, point2) ? "True" : "False") << std::endl;
 	return 0;
 }

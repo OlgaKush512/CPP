@@ -16,35 +16,29 @@
 /*------------------CONSTRUCTORS----------------------------------*/
 /*----------------------------------------------------------------*/
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _nbStock(0)
 {
-	std::cout << "Default constructer called. Adress :" << this << std::endl;
-	this->_nbStock = 0;
+	std::cout << "Default constructer called. Adress : " << this << std::endl;
 }
 
-Fixed::Fixed(Fixed const &other)
+Fixed::Fixed(Fixed const &other) : _nbStock(other.getRawBits())
 {
-	std::cout << "Copy constructor called, address :" << this << std::endl;
-	*this = other;
+	std::cout << "Copy constructor called, address : " << this << std::endl;
 }
 
-Fixed::Fixed(const int my_int)
+Fixed::Fixed(const int my_int) : _nbStock((my_int << this->_nbBits))
 {
-	std::cout << "Int constructor called, address :" << this << std::endl;
-	this->_nbStock = 0;
-	this->_nbStock = (my_int << this->_nbBits);
+	std::cout << "Int constructor called, address : " << this << std::endl;
 }
 
-Fixed::Fixed(const float my_float)
+Fixed::Fixed(const float my_float) : _nbStock(roundf(my_float * (float)256))
 {
-	std::cout << "Float constructor called, address :" << this << std::endl;
-	this->_nbStock = 0;
-	this->_nbStock = roundf(my_float * (float)256);
+	std::cout << "Float constructor called, address : " << this << std::endl;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructeur called. Adress :" << this << std::endl;
+	std::cout << "Destructeur called. Adress : " << this << std::endl;
 }
 
 /*----------------------------------------------------------------*/
@@ -53,8 +47,8 @@ Fixed::~Fixed(void)
 
 Fixed & Fixed::operator = (const Fixed &other)
 {
-	std::cout << "Copy assignment operator called, address :" << this << std::endl;	
-	this->_nbStock= other._nbStock;
+	std::cout << "Copy assignment operator called, address : " << this << std::endl;	
+	this->_nbStock = other._nbStock;
 	return (*this);
 }
 
@@ -64,12 +58,12 @@ Fixed & Fixed::operator = (const Fixed &other)
 
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << this << std::endl;	
+	std::cout << "getRawBits member function called, address : " << this << std::endl;	
 	return (this->_nbStock);
 }
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << this << std::endl;	
+	std::cout << "setRawBits member function called, address : " << this << std::endl;	
 	this->_nbStock = raw;
 }
 
@@ -78,7 +72,7 @@ float Fixed::toFloat(void) const
 	float	resFloat;
 
 	resFloat = (float)this->_nbStock / 256.f;
-	return resFloat;
+	return (resFloat);
 }
 
 int Fixed::toInt(void) const

@@ -1,14 +1,18 @@
-NAME		= ex02
+NAME		= 	ex02
 
-SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
-OBJS		= $(SRCS:.cpp=.o)
+HEADER		=	ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
-CC			= clang++
+OBJS		= 	$(SRCS:.cpp=.o)
 
-RM			= rm -rf
+DEPENDENCES	= 	$(OBJS:.o=.d)
 
-CFLAGS		= -Wall -Wextra  -Werror -std=c++98 -g
+CC			=	c++
+
+RM			= 	rm -rf
+
+CFLAGS		= 	-Wall -Wextra  -Werror -std=c++98
 
 all:		$(NAME)
 
@@ -16,8 +20,11 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
+%.o : %.cpp $(HEADER)
+		$(CC) $(CFLAGS) -MMD -o $@ -c $< 
+
 clean:		
-			$(RM) $(OBJS)	
+			$(RM) $(OBJS) $(DEPENDENCES)
 
 fclean:		clean
 			$(RM) $(NAME)

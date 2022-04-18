@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/18 19:13:22 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/18 19:13:24 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "FragTrap.hpp"
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	std::cout << "Default constructer of FragTrap called. Adress :" << this << std::endl;
+	std::cout << "Default constructer of the class FragTrap called. Adress : " << this << std::endl;
 	this->_name = "";
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
@@ -11,7 +23,7 @@ FragTrap::FragTrap(void) : ClapTrap()
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Main constructerof FragTrap called. Adress :" << this << std::endl;
+	std::cout << "Main constructer of the class FragTrap called. Adress : " << this << std::endl;
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
@@ -20,18 +32,18 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(FragTrap const &other)
 {
-	std::cout << "Copy constructor of FragTrap called, address :" << this << std::endl;
+	std::cout << "Copy constructor of the class FragTrap called, address : " << this << std::endl;
 	*this = other;
 }
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "Destructeur of FragTrap called. Adress :" << this << std::endl;
+	std::cout << "Destructeur of the class FragTrap called. Adress : " << this << std::endl;
 }
 
 FragTrap & FragTrap::operator = (const FragTrap &other)
 {
-	std::cout << "Copy assignment operator of FragTrap called, address :" << this << std::endl;	
+	std::cout << "Copy assignment operator of the class FragTrap called, address : " << this << std::endl;	
 	this->_name = other._name ;
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;

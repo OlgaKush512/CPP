@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 16:16:52 by okushnir          #+#    #+#             */
-/*   Updated: 2022/04/16 16:16:55 by okushnir         ###   ########.fr       */
+/*   Created: 2022/04/16 16:13:46 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/16 16:13:49 by okushnir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed(const int my_int) : _nbStock(my_int << this->_nbBits)
 	return ;
 }
 
-Fixed::Fixed(const float my_float) : _nbStock(my_float * (float)256)
+Fixed::Fixed(const float my_float) : _nbStock(roundf(my_float * (float)256))
 {
 	return ;
 }
@@ -40,7 +40,6 @@ Fixed::~Fixed(void)
 {
 	return ;
 }
-
 /*----------------------------------------------------------------*/
 /*------------------RECHARGE-OPERATORS----------------------------*/
 /*----------------------------------------------------------------*/
@@ -56,48 +55,42 @@ bool	Fixed::operator > (const Fixed &other)
 {
 	if (this->_nbStock > other._nbStock)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 bool	Fixed::operator < (const Fixed &other)
 {
 	if (this->_nbStock < other._nbStock)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 bool	Fixed::operator >= (const Fixed &other)
 {
 	if (this->_nbStock >= other._nbStock)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 bool	Fixed::operator <= (const Fixed &other)
 {
 	if (this->_nbStock <= other._nbStock)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 bool	Fixed::operator == (const Fixed &other)
 {
 	if (this->_nbStock == other._nbStock)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 bool	Fixed::operator != (const Fixed &other)
 {
 	if (this->_nbStock != other._nbStock)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 Fixed	Fixed::operator + (const Fixed &other)
@@ -164,32 +157,28 @@ Fixed & Fixed::min(Fixed &one, Fixed &two)
 {
 	if (one.getRawBits() < two.getRawBits())
 		return (one);
-	else
-		return (two);
+	return (two);
 }
 
 Fixed const & Fixed::min(const Fixed &one, const Fixed &two)
 {
 	if (one.getRawBits() < two.getRawBits())
 		return (one);
-	else
-		return (two);
+	return (two);
 }
 
 Fixed & Fixed::max(Fixed &one, Fixed &two)
 {
 	if (one.getRawBits() > two.getRawBits())
 		return (one);
-	else
-		return (two);
+	return (two);
 }
 
 Fixed const & Fixed::max(const Fixed &one, const Fixed &two)
 {
 	if (one.getRawBits() > two.getRawBits())
 		return (one);
-	else
-		return (two);
+	return (two);
 }
 
 
@@ -201,7 +190,6 @@ int Fixed::getRawBits(void) const
 {
 	return (this->_nbStock);
 }
-
 void Fixed::setRawBits(int const raw)
 {
 	this->_nbStock = raw;
@@ -211,7 +199,7 @@ float Fixed::toFloat(void) const
 {
 	float	resFloat;
 	resFloat = (float)this->_nbStock / 256.f;
-	return resFloat;
+	return (resFloat);
 }
 
 int Fixed::toInt(void) const
