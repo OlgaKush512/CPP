@@ -21,15 +21,15 @@ void	test(ClapTrap &te)
 int main(void)
 {
 	ScavTrap sk("Nick");
-	ScavTrap mk = sk;
+	// ScavTrap mk = sk;
 
 	for (int i = 0; i < 2; i++)
 	{
 		sk.attack("Joseph");
-		sk.takeDamage(5);
+		sk.takeDamage(60);
 		sk.beRepaired(4);
 	}
-	test(sk);
+	// test(sk);
 	sk.guardGate();
 	sk.guardGate();
 	return (0);
