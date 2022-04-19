@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 23:05:50 by okushnir          #+#    #+#             */
-/*   Updated: 2022/04/18 23:05:52 by okushnir         ###   ########.fr       */
+/*   Created: 2022/04/18 23:04:39 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/18 23:04:46 by okushnir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,10 @@ FragTrap & FragTrap::operator = (const FragTrap &other)
 
 void FragTrap::highFivesGuys(void)
 {
+	if (_notAction())
+	{
+		std::cout << "Sorry, I can't ... I don't have the resources ;(" << std::endl;
+		return;
+	}
 	std::cout << "High five, Maaan!" << std::endl;
 }

@@ -21,16 +21,16 @@ void	test(ClapTrap &te)
 int main(void)
 {
 	ScavTrap sk("Nick");
-	// ScavTrap mk = sk;
 
 	for (int i = 0; i < 2; i++)
 	{
-		sk.attack("Joseph");
-		sk.takeDamage(60);
+		std::cout << std::endl << std::endl;
+		sk.attack("kiwi");
+		sk.takeDamage(30);
 		sk.beRepaired(4);
 	}
-	// test(sk);
-	sk.guardGate();
+	std::cout << std::endl << std::endl;
+	test(sk);
 	sk.guardGate();
 	return (0);
 }

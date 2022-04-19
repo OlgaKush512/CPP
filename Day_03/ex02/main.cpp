@@ -16,12 +16,14 @@ int main(void)
 {
 	FragTrap fr("Nick");
 
-	for (int i = 0; i < 12; i++)
+	for (int i = 0; i < 2; i++)
 	{
-		fr.attack("pistolet");
-		fr.takeDamage(5);
+		std::cout << std::endl << std::endl;
+		fr.attack("kiwi");
+		fr.takeDamage(50);
 		fr.beRepaired(4);
 	}
+	std::cout << std::endl << std::endl;
 	fr.highFivesGuys();
 	return (0);
 }

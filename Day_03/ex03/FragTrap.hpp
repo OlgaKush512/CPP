@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 19:15:12 by okushnir          #+#    #+#             */
-/*   Updated: 2022/04/18 19:15:16 by okushnir         ###   ########.fr       */
+/*   Created: 2022/04/18 19:13:35 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/18 19:13:36 by okushnir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class FragTrap : virtual public ClapTrap
 	FragTrap(std::string name);
 
 	FragTrap(FragTrap const &other);
-	~FragTrap(void);
+	virtual ~FragTrap(void);
 
 	FragTrap & operator = (const FragTrap &other);
 

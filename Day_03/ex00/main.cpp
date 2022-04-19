@@ -16,11 +16,13 @@ int main(void)
 {
 	ClapTrap cl("Nick");
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 2; i++)
 	{
-		cl.attack("kiwi");
+		std::cout << std::endl << std::endl;
+		cl.attack("momo");
 		cl.takeDamage(6);
 		cl.beRepaired(4);
 	}
+	std::cout << std::endl << std::endl;
 	return (0);
 }

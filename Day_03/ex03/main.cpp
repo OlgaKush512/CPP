@@ -16,8 +16,13 @@ int main(void)
 {
 	DiamondTrap diamant("Nick");
 
+	std::cout << std::endl;
 	diamant.getValues();
+	std::cout << std::endl;
 	diamant.attack("Kekw");
+	diamant.takeDamage(40);
+	std::cout << std::endl;
 	diamant.getValues();
+	std::cout << std::endl;
 	return (0);
 }

@@ -52,5 +52,10 @@ FragTrap & FragTrap::operator = (const FragTrap &other)
 
 void FragTrap::highFivesGuys(void)
 {
+	if (_notAction())
+	{
+		std::cout << "Sorry, I can't ... I don't have the resources ;(" << std::endl;
+		return;
+	}
 	std::cout << "High five, Maaan!" << std::endl;
 }

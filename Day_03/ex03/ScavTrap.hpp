@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 19:15:58 by okushnir          #+#    #+#             */
-/*   Updated: 2022/04/18 23:06:32 by okushnir         ###   ########.fr       */
+/*   Created: 2022/04/18 19:13:58 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/18 19:14:00 by okushnir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class ScavTrap : virtual public ClapTrap
 	ScavTrap(std::string name);
 
 	ScavTrap(ScavTrap const &other);
-	~ScavTrap(void);
+	virtual ~ScavTrap(void);
 
 	ScavTrap & operator = (const ScavTrap &other);
 
-	void attack(const std::string& target);
+	virtual void attack(const std::string& target);
 	void guardGate(void);
 };
 
