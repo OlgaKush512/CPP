@@ -1,7 +1,7 @@
 #include "Form.hpp"
 
 
-Form::Form(void) : _gradeSign(0), _gradeExec(0), _name("")
+Form::Form(void) : _name(""), _gradeSign(0), _gradeExec(0)
 {
 	std::cout << "Default constructor of the class Form called, address :" << this << std::endl;
 }
@@ -16,7 +16,7 @@ const char * Form::GradeTooLowException::what(void) const throw()
 	return ("Form::GradeTooLowException");
 }
 
-Form::Form(std::string name, int gradeSign, int gradeExec) : _gradeSign(gradeSign), _gradeExec(gradeExec), _name(name)
+Form::Form(std::string name, int gradeSign, int gradeExec) :  _name(name), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
 	if ((gradeSign < 1) || (gradeExec < 1))
 		throw Form::GradeTooHighException();
@@ -26,11 +26,12 @@ Form::Form(std::string name, int gradeSign, int gradeExec) : _gradeSign(gradeSig
 	std::cout << "Parametric constructor of the class Form called, address :" << this << std::endl;
 }
 
-Form::Form(Form const &other) : _gradeSign(other._gradeSign), _gradeExec(other._gradeExec), _name(other._name)
+Form::Form(Form const &other) : _name(other._name), _gradeSign(other._gradeSign), _gradeExec(other._gradeExec)
 {
 	std::cout << "Copy constructor of the class Form called, address :" << this << std::endl;
 	this->_signed = other._signed;
 }
+
 Form & Form::operator = (const Form &other)
 {
 	std::cout << "Copy assignment operator of the class Form called, address :" << this << std::endl;	
