@@ -1,5 +1,17 @@
-#ifndef WRONG_WrongCAT_HPP
-# define WRONG_WrongCAT_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/19 20:55:45 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/19 20:55:49 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef WRONG_CAT_HPP
+# define WRONG_CAT_HPP
 
 # include "WrongAnimal.hpp"
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/19 20:59:59 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/19 21:00:01 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "Character.hpp"
 
 Character::Character(void) : _name("Default")
@@ -18,9 +30,11 @@ Character::Character(Character const &other)
 {
 	std::cout << "Copy constructor of the class Character called, address :" << this << std::endl;
 	for (int i = 0; i < 4; i++)
+	{
 		this->_inventary[i] = 0;
-	for (int i = 0; i < 4 && other._inventary[i]; i++)
-		this->_inventary[i] = other._inventary[i]->clone();
+		if (other._inventary[i])
+			this->_inventary[i] = other._inventary[i]->clone();
+	}
 	this->_name = other._name;
 }
 
@@ -39,12 +53,14 @@ Character & Character::operator = (const Character &other)
 	std::cout << "Copy assignment operator of Character called, address :" << this << std::endl;	
 	this->_name = other._name ;
 
-	for (int i = 0; i < 4 && this->_inventary[i]; i++)
-		delete this->_inventary[i];
-	for (int i = 0; i < 4; i++)
-		this->_inventary[i] = 0;
 	for (int i = 0; i < 4; i++)
 	{
+		if (this->_inventary[i])
+			delete this->_inventary[i]; 
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		this->_inventary[i] = 0;
 		if (other._inventary[i])
 			this->_inventary[i] = other._inventary[i]->clone();
 	}
