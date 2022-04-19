@@ -1,8 +1,6 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
-# include <iostream>
-# include <string>
 # include "AAnimal.hpp"
 
 class Cat : public AAnimal
@@ -11,11 +9,11 @@ class Cat : public AAnimal
 
 		Cat(void);
 		Cat(Cat const &other);
-		~Cat(void);
+		virtual ~Cat(void);
 
 		Cat & operator = (const Cat &other);
 
-		void	makeSound(void) const;
+		virtual void	makeSound(void) const;
 
 	private:
 

@@ -1,6 +1,6 @@
 # include "AMateria.hpp"
 
-AMateria::AMateria(void) : _type("")
+AMateria::AMateria(void) : _type("default")
 {
 	std::cout << "Default constructer of the class AMateria called. Adress :" << this << std::endl;
 }
@@ -23,8 +23,8 @@ AMateria::~AMateria(void)
 
 AMateria & AMateria::operator = (const AMateria &other)
 {
+	(void)other;
 	std::cout << "Copy assignment operator of AMateria called, address :" << this << std::endl;	
-	this->_type = other._type ;
 	return (*this);
 }
 
@@ -35,5 +35,7 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "AMateria::use" << std::endl;	
+	(void)target;
+
+	// std::cout << "AMateria::use" << std::endl;	
 }

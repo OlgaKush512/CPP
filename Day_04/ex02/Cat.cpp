@@ -11,7 +11,8 @@ Cat::Cat(void)
 Cat::Cat(Cat const &other)
 {
 	std::cout << "Copy constructor of the class Cat called, address :" << this << std::endl;
-	*this = other;
+	this->type = other.type ;
+	this->_myBrain = new Brain(*(other._myBrain));
 }
 
 Cat::~Cat(void)
@@ -23,7 +24,9 @@ Cat::~Cat(void)
 Cat & Cat::operator = (const Cat &other)
 {
 	std::cout << "Copy assignment operator of Cat called, address :" << this << std::endl;	
+	delete this->_myBrain;
 	this->type = other.type ;
+	this->_myBrain = new Brain(*(other._myBrain));
 	return (*this);
 }
 

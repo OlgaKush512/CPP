@@ -11,13 +11,11 @@ class Dog : public Animal
 
 		Dog(void);
 		Dog(Dog const &other);
-		~Dog(void);
+		virtual ~Dog(void);
 
 		Dog & operator = (const Dog &other);
 
-	protected:
-
-		void	makeSound(void) const;
+		virtual void	makeSound(void) const;
 		
 	private:
 

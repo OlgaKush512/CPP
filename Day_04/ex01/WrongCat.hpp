@@ -15,8 +15,6 @@ class WrongCat : public WrongAnimal
 
 	WrongCat & operator = (const WrongCat &other);
 
-	protected:
-
 	void	makeSound(void) const;
 };
 

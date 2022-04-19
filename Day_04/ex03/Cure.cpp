@@ -1,9 +1,8 @@
 # include "Cure.hpp"
 
-Cure::Cure(void)
+Cure::Cure(void) : AMateria("cure")
 {
 	std::cout << "Default constructer of the class Cure called. Adress :" << this << std::endl;
-	this->_type = "";
 }
 
 Cure::Cure(Cure const &other)
@@ -19,6 +18,7 @@ Cure::~Cure(void)
 
 Cure & Cure::operator = (const Cure &other)
 {
+	(void)other;
 	std::cout << "Copy assignment operator of Cure called, address :" << this << std::endl;	
 	return (*this);
 }

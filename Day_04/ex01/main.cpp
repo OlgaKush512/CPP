@@ -8,26 +8,52 @@
 
 int main()
 {
+	std::cout << "_____________________Dog copy constructor_____________________" << std::endl << std::endl;
+	Dog gav;
+	std::cout << std::endl;
+
+	Dog gav1(gav);
+	std::cout << std::endl;
+	gav = gav1;
+	std::cout << std::endl;
+
+	std::cout << "_____________________Cat copy constructor_____________________" << std::endl << std::endl;
+	Cat miou;
+	std::cout << std::endl;
+
+	Cat miou1(miou);
+	std::cout << std::endl;
+	miou = miou1;
+	std::cout << std::endl;
+
+	std::cout << "_____________________other tests from subject_____________________" << std::endl << std::endl;
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	Animal *arr[10];
+	int N = 5;
+	Animal *arr[N];
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < N; i++)
 	{
-		if (i < 5)
+		if (i < N/2)
 			arr[i] = new Cat();
 		else
 			arr[i] = new Dog();
-
 	}
+	std::cout << std::endl;
+	std::cout << arr[0]->getType() << " " << std::endl;
+	std::cout << std::endl;
 
-	std::cout << arr[3]->getType() << " " << std::endl;
-	std::cout << arr[8]->getType() << " " << std::endl;
-	arr[3]->makeSound(); //will output the cat sound!
-	arr[8]->makeSound();
+	std::cout << arr[N - 1]->getType() << " " << std::endl;
+	std::cout << std::endl;
+	arr[0]->makeSound();
+	std::cout << std::endl;
+	arr[N - 1]->makeSound();
+	std::cout << std::endl;
 	meta->makeSound();
+	std::cout << std::endl;
+
 	delete i;
 	delete j;
 	delete meta;
@@ -35,7 +61,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << std::endl;
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < N; i++)
 	{
 		delete arr[i];
 	}

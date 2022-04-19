@@ -1,6 +1,6 @@
 # include "Character.hpp"
 
-Character::Character(void)
+Character::Character(void) : _name("Default")
 {
 	std::cout << "Default constructer of the class Character called. Adress :" << this << std::endl;
 	for (int i = 0; i < 4; i++)
@@ -72,11 +72,12 @@ void Character::equip(AMateria* m)
 			break ;
 		}
 	}
-	
 }
 
 void Character::unequip(int idx)
 {
+	if (idx < 0 || idx > 3)
+		return ;
 	if ((this->_inventary[idx]))
-		this->_inventary[idx] = nullptr;
+		this->_inventary[idx] = 0;
 }

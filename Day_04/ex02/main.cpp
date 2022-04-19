@@ -6,9 +6,10 @@
 # include "Brain.hpp"
 
 
-int main()
+int main(void)
 {
 	// const AAnimal* meta = new AAnimal();
+	// AAnimal am;
 	const Dog* j = new Dog();
 	const Cat* i = new Cat();
 

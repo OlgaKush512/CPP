@@ -1,8 +1,6 @@
 #ifndef WRONG_WrongCAT_HPP
 # define WRONG_WrongCAT_HPP
 
-# include <iostream>
-# include <string>
 # include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal
@@ -14,8 +12,6 @@ class WrongCat : public WrongAnimal
 	~WrongCat(void);
 
 	WrongCat & operator = (const WrongCat &other);
-
-	protected:
 
 	void	makeSound(void) const;
 };

@@ -11,11 +11,11 @@ class Cat : public Animal
 
 		Cat(void);
 		Cat(Cat const &other);
-		~Cat(void);
+		virtual ~Cat(void);
 
 		Cat & operator = (const Cat &other);
 
-		void	makeSound(void) const;
+		virtual void	makeSound(void) const;
 
 	private:
 

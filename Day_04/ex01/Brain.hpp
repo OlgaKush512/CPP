@@ -13,7 +13,7 @@ class Brain
 	Brain(void);
 	Brain(Brain const &other);
 	
-	virtual ~Brain(void);
+	~Brain(void);
 
 	Brain & operator = (const Brain &other);
 

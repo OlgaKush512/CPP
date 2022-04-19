@@ -13,7 +13,8 @@ Dog::Dog(void)
 Dog::Dog(Dog const &other)
 {
 	std::cout << "Copy constructor of the class Dog called, address :" << this << std::endl;
-	*this = other;
+	this->type = other.type ;
+	this->_myBrain = new Brain(*(other._myBrain));
 }
 
 Dog::~Dog(void)
@@ -25,7 +26,9 @@ Dog::~Dog(void)
 Dog & Dog::operator = (const Dog &other)
 {
 	std::cout << "Copy assignment operator of Dog called, address :" << this << std::endl;	
+	delete this->_myBrain;
 	this->type = other.type ;
+	this->_myBrain = new Brain(*(other._myBrain));
 	return (*this);
 }
 

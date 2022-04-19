@@ -19,5 +19,7 @@ Brain::~Brain(void)
 Brain & Brain::operator = (const Brain &other)
 {
 	std::cout << "Copy assignment operator of Brain called, address :" << this << std::endl;	
+	for (int i = 0; i < 100; i++)
+		this->ideas[i]= other.ideas[i];
 	return (*this);
 }

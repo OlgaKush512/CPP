@@ -1,10 +1,8 @@
 # include "Ice.hpp"
 
-Ice::Ice(void)
+Ice::Ice(void) : AMateria("ice")
 {
 	std::cout << "Default constructer of the class Ice called. Adress :" << this << std::endl;
-	this->_type = "ice";
-
 }
 
 Ice::Ice(Ice const &other)
@@ -20,6 +18,7 @@ Ice::~Ice(void)
 
 Ice & Ice::operator = (const Ice &other)
 {
+	(void)other;
 	std::cout << "Copy assignment operator of Ice called, address :" << this << std::endl;	
 	return (*this);
 }
