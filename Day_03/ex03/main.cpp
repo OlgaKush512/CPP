@@ -24,5 +24,12 @@ int main(void)
 	std::cout << std::endl;
 	diamant.getValues();
 	std::cout << std::endl;
+
+	diamant.whoAmI();
+	std::cout << std::endl;
+	diamant.highFivesGuys();
+	std::cout << std::endl;
+	diamant.guardGate();
+	std::cout << std::endl;
 	return (0);
 }
