@@ -22,7 +22,7 @@ class RobotomyRequestForm : public Form
 			virtual const char* what(void) const throw();
 		};
 
-		void		execute(Bureaucrat const & executor) const;
+		virtual void		execute(Bureaucrat const & executor) const;
 		std::string	getTarget(void) const;
 
 	private:
