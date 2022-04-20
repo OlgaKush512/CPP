@@ -12,6 +12,7 @@ int main(void)
 			Form fr("Forme1", 40, 50);
 			std::cout << fr;
 			fr.beSigned(br);
+			fr.beSigned(br);
 			br.signForm(fr);
 		}
 		catch(std::exception & e)

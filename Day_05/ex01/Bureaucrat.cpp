@@ -80,7 +80,7 @@ void	Bureaucrat::decrementGrade(void)
 void Bureaucrat::signForm(Form &myForm)
 {
 	if (myForm.isSigned())
-		std::cout << this->getName() << " couldn’t sign "<< myForm.getName() << "because the form is signed before." << std::endl;	
+		std::cout << this->getName() << " couldn’t sign "<< myForm.getName() << " because the form is signed before." << std::endl;	
 	else
 	{
 		try
@@ -91,7 +91,7 @@ void Bureaucrat::signForm(Form &myForm)
 		catch (std::exception & e)
 		{
 			std::cerr << e.what() << std::endl;
-			std::cout << this->getName() << " couldn’t sign "<< myForm.getName() << "because bureaucrat’s grade is too low" << std::endl;	
+			std::cout << this->getName() << " couldn’t sign "<< myForm.getName() << " because bureaucrat’s grade is too low" << std::endl;	
 		}
 	}
 }

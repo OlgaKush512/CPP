@@ -7,7 +7,7 @@ int main(void)
 {
 	try
 	{
-		Bureaucrat br("Michel", 90);
+		Bureaucrat br("Michel", 10);
 		std::cout << br;
 		try
 		{

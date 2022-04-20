@@ -67,7 +67,15 @@ bool		Form::isSigned(void) const
 void		Form::beSigned(const Bureaucrat &myBureaucrat)
 {
 	if (myBureaucrat.getGrade() <= this->_gradeSign)
+	{
+		if (this->_signed == true)
+		{
+			std::cout << "The form " << this->getName() << " can't be signed, because it is signed before." << std::endl;
+			return ;
+		}
 		this->_signed = true;
+		std::cout << myBureaucrat.getName() << " signed "<< this->getName() << std::endl;
+	}
 	else
 		throw Form::GradeTooLowException();
 }

@@ -9,6 +9,7 @@ int main(void)
 		br.incrementGrade();
 		std::cout << br;
 		br.decrementGrade();
+		br.decrementGrade();
 		std::cout << br;
 	}
 	catch(std::exception & e)

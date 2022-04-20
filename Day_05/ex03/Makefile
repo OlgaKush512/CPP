@@ -1,10 +1,13 @@
-NAME		= 	ex02
+NAME		= 	ex03
 
 SRCS		=	main.cpp Bureaucrat.cpp Form.cpp RobotomyRequestForm.cpp \
 				PresidentialPardonForm.cpp \
 				ShrubberyCreationForm.cpp \
+				Intern.cpp \
 
-HEADER		=	Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+HEADER		=	Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
+				RobotomyRequestForm.hpp ShrubberyCreationForm.hpp\
+				Intern.hpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
