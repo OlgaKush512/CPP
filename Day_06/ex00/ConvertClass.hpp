@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+#include <climits>
 #include <cfloat>
 
 
@@ -26,6 +27,7 @@ class ConvertClass
 		~ConvertClass();
 
 		void	printData(void);
+
 
 	private:
 

@@ -19,11 +19,11 @@ ConvertClass::ConvertClass(const char *data_raw) : _data_raw(data_raw), _data(st
 
 ConvertClass::ConvertClass(ConvertClass const &other)
 {
-	*this= other;
+	*this = other;
 }
 ConvertClass & ConvertClass::operator = (const ConvertClass &other)
 {
-	*this= other;
+	(void) other;
 	return (*this);
 }
 
@@ -67,7 +67,7 @@ int	ConvertClass::_fillUpDigit(void)
 
 int	ConvertClass::_checkDigit(void)
 {
-	int	found = 0;
+	unsigned long	found = 0;
 
 	if (this->_data.find_first_not_of("0123456789f.-", 0) != std::string::npos)
 		return (INCORRECT_INPUT);
@@ -90,7 +90,7 @@ int	ConvertClass::_checkDigit(void)
 	}
 	if ((found = this->_data.find("f", 0)) != std::string::npos)
 	{
-		int found_p = this->_data.find(".", 0);
+		unsigned long found_p = this->_data.find(".", 0);
 		if ((found_p == std::string::npos) || found < found_p)
 			return (INCORRECT_INPUT);
 		else

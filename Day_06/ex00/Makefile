@@ -1,14 +1,18 @@
-NAME		= convert
+NAME		= 	ex03
 
-SRCS		= main.cpp ConvertClass.cpp
+SRCS		=	main.cpp ConvertClass.cpp
 
-OBJS		= $(SRCS:.cpp=.o)
+HEADER		=	ConvertClass.hpp
 
-CC			= clang++
+OBJS		= 	$(SRCS:.cpp=.o)
 
-RM			= rm -rf
+DEPENDENCES	= 	$(OBJS:.o=.d)
 
-CFLAGS		= -Wall -Wextra  -Werror -std=c++98 -g -fsanitize=address
+CC			=	c++
+
+RM			= 	rm -rf
+
+CFLAGS		= 	-Wall -Wextra -Werror -std=c++98 -g3
 
 all:		$(NAME)
 
@@ -16,8 +20,11 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
+%.o : %.cpp $(HEADER)
+		$(CC) $(CFLAGS) -MMD -o $@ -c $< 
+
 clean:		
-			$(RM) $(OBJS)	*_shrubbery
+			$(RM) $(OBJS) $(DEPENDENCES) *_shrubbery
 
 fclean:		clean
 			$(RM) $(NAME)
