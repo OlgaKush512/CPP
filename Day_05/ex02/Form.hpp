@@ -14,7 +14,6 @@ class Form
 {
 	public:
 
-		Form(void);
 		Form(std::string name, int gradeSign, int gradeExec);
 		Form(Form const &other);
 		Form & operator = (const Form &other);
@@ -47,6 +46,7 @@ class Form
 		virtual int			getGradeSign(void) const;
 		virtual int			getGradeExec(void) const;
 		virtual bool		isSigned(void) const;
+		
 
 
 	private:
@@ -55,6 +55,8 @@ class Form
 		bool				_signed;
 		const int			_gradeSign;
 		const int			_gradeExec;
+
+		Form(void);
 
 };
 

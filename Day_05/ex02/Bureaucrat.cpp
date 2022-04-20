@@ -15,14 +15,12 @@ const char * Bureaucrat::GradeTooLowException::what(void) const throw()
 	return ("Bureaucrat::GradeTooLowException");
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	this->_grade = grade;
-	this->_name = name;
 	std::cout << "Parametric constructor of the class Bureaucrat called, address :" << this << std::endl;
 }
 

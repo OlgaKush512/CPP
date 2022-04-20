@@ -10,7 +10,7 @@ int main(void)
 
 	Form *newForm;
 
-	newForm = my_intern.makeForm("request", "Bender");
+	newForm = my_intern.makeForm("robotomy request", "Bender");
 
 	if (newForm != NULL)
 	{

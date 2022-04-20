@@ -63,8 +63,8 @@ void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	}
 	else
 	{
-		throw ShrubberyCreationForm::NotSignedYetException();
 		std::cout << executor.getName() << " couldn’t execute "<< this->_target << " because the form is not signed." << std::endl;
+		throw ShrubberyCreationForm::NotSignedYetException();
 	}
 }
 
