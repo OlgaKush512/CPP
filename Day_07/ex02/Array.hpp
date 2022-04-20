@@ -14,7 +14,7 @@ class Array
 		Array(void) : myArr(new T[0]), _size(0) {}
 		Array(const unsigned int n) : myArr(new T[n]), _size(n)
 		{
-			for (int i = 0; i < n; i++)
+			for (unsigned int i = 0; i < n; i++)
 				myArr[i] = 0;
 		}
 
