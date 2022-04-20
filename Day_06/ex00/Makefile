@@ -1,4 +1,4 @@
-NAME		= 	ex03
+NAME		= 	ex00
 
 SRCS		=	main.cpp ConvertClass.cpp
 
@@ -24,7 +24,7 @@ $(NAME):	$(OBJS)
 		$(CC) $(CFLAGS) -MMD -o $@ -c $< 
 
 clean:		
-			$(RM) $(OBJS) $(DEPENDENCES) *_shrubbery
+			$(RM) $(OBJS) $(DEPENDENCES)
 
 fclean:		clean
 			$(RM) $(NAME)

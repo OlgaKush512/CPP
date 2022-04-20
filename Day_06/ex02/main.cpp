@@ -1,6 +1,7 @@
 #include "ClassA.hpp"
 #include "ClassB.hpp"
 #include "ClassC.hpp"
+#include <exception>
 
 Base * generate(void)
 {
@@ -9,7 +10,6 @@ Base * generate(void)
 	srand(time(NULL));
 
 	res = 1 + rand() % (3 - 1 + 1);
-	std::cout << res << std::endl;
 	switch (res)
 	{
 		case 1:
@@ -53,20 +53,36 @@ void identify(Base& p)
 	try
 	{
 		ClassA &refA = dynamic_cast<ClassA &>(p);
+		(void)refA;
 		std::cout << "The actual ctype of the object pointed to by p is \"A\"" << std::endl;
 	}
-	catch (std::bad_cast &bc)
+	catch (std::exception &bc)
 	{
-		try
-		{
-			ClassB &refB = dynamic_cast<ClassB &>(p);
-			std::cout << "The actual ctype of the object pointed to by p is \"B\"" << std::endl;
-		}
-		catch(std::bad_cast &bc)
-		{
-			ClassC &refC = dynamic_cast<ClassC &>(p);
-			std::cout << "The actual ctype of the object pointed to by p is \"C\"" << std::endl;
-		}
+		
+		;
+		// std::cerr << "Error: " << bc.what() << std::endl;
+	}
+	try
+	{
+		ClassB &refB = dynamic_cast<ClassB &>(p);
+		(void)refB;
+		std::cout << "The actual ctype of the object pointed to by p is \"B\"" << std::endl;
+	}
+	catch(std::exception &bc)
+	{
+		;
+		// std::cerr << "Error: " << bc.what() << std::endl;
+	}
+	try
+	{
+		ClassC &refC = dynamic_cast<ClassC &>(p);
+		(void)refC;
+		std::cout << "The actual ctype of the object pointed to by p is \"C\"" << std::endl;
+	}
+	catch(std::exception &bc)
+	{
+		;
+		// std::cerr << "Error: " << bc.what() << std::endl;
 	}
 }
 

@@ -46,15 +46,13 @@ void	ConvertClass::_printDoubleString(void)
 {
 	std::cout << "char: impossible" << std::endl
 	<< "int: impossible" << std::endl
-	<< "float: " << this->_data + 'f'
+	<< "float: " << this->_data + 'f' << std::endl
 	<< "double: " <<  this->_data << std::endl;
 }
 
 int	ConvertClass::_fillUpDigit(void)
 {
-	// if (at > INT_MAX || at < INT_MIN)
-	// 	return (INCORRECT_INPUT);
-	_Double = strtod(_data_raw, NULL); // atof
+	_Double = strtod(_data_raw, NULL);
 	_Float = static_cast<float>(_Double);
 	if (_Double > INT_MAX || _Double < INT_MIN)
 		return (INCORRECT_INPUT);
