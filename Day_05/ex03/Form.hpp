@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/21 18:09:59 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/21 18:10:00 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FORM_HPP
 # define FORM_HPP
 
@@ -42,7 +54,7 @@ class Form
 		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 		void		beSigned(const Bureaucrat &myBureaucrat);
-		std::string			getName(void) const;
+		std::string	getName(void) const;
 		int			getGradeSign(void) const;
 		int			getGradeExec(void) const;
 		bool		isSigned(void) const;

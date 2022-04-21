@@ -1,9 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/21 18:08:47 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/21 18:08:50 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRESIDENTIAL_PARDON_FORM_HPP
 # define PRESIDENTIAL_PARDON_FORM_HPP
-
-# include <iostream>
-# include <string>
-# include <exception>
 
 #include "Form.hpp"
 
@@ -18,7 +26,7 @@ class PresidentialPardonForm : public Form
 		~PresidentialPardonForm();
 
 		virtual void		execute(Bureaucrat const & executor) const;
-		std::string	getTarget(void) const;
+		std::string			getTarget(void) const;
 
 	private:
 

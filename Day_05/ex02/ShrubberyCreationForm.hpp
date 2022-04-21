@@ -1,9 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/21 18:09:24 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/21 18:09:29 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SHRUBBERY_CREATION_FORM_HPP
 # define SHRUBBERY_CREATION_FORM_HPP
-
-# include <iostream>
-# include <string>
-# include <exception>
 
 #include "Form.hpp"
 
@@ -40,7 +48,7 @@ class ShrubberyCreationForm : public Form
 		~ShrubberyCreationForm();
 
 		virtual void		execute(Bureaucrat const & executor) const;
-		std::string	getTarget(void) const;
+		std::string			getTarget(void) const;
 
 	private:
 

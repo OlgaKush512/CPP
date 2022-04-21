@@ -1,9 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/21 18:09:05 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/21 18:09:07 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ROBOTOMY_REQUEST_FORM_HPP
 # define ROBOTOMY_REQUEST_FORM_HPP
-
-# include <iostream>
-# include <string>
-# include <exception>
 
 #include "Form.hpp"
 
@@ -19,11 +27,11 @@ class RobotomyRequestForm : public Form
 
 		class RobotomyFailedException : public std::exception
 		{
-			virtual const char* what(void) const throw();
+			const char* what(void) const throw();
 		};
 
 		virtual void		execute(Bureaucrat const & executor) const;
-		std::string	getTarget(void) const;
+		std::string			getTarget(void) const;
 
 	private:
 
