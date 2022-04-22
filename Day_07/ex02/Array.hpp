@@ -18,11 +18,42 @@ class Array
 				myArr[i] = 0;
 		}
 
-		Array(Array const &other) : myArr(new T[other._size]), _size(other._size) {}
-		// Array & operator = (const Array &other) : myArr(new T[other._size]), _size(other._size) {}
+		Array(Array const &other)
+		{
+			this->myArr = new T[other.size()];
+			this->_size = other.size();
+			for (unsigned int i = 0; i < this->_size; i++)
+				myArr[i] = 0;
+			// return (*this);
+			// (*this) = other;
+		}
+		Array & operator = (const Array &other)
+		{
+			delete [] this->myArr;
+			this->myArr = new T[other.size()];
+			this->_size = other.size();
+			for (unsigned int i = 0; i < this->_size; i++)
+				myArr[i] = 0;
+			return (*this);
+		}
 		~Array() { delete [] this->myArr;}
 
-		int	size(void) const
+		class IndexNotFound : public std::exception
+		{
+			virtual const char* what(void) const throw()
+			{
+				return ("Array::IndexNotFound");
+			}
+		};
+
+		T &operator [] (unsigned int i) const
+		{
+			if (i < 0 || i >= this->size())
+				throw  Array::IndexNotFound();
+			return (this->myArr[i]);
+		}
+
+		unsigned int	size(void) const
 		{
 			return (this->_size);
 		}

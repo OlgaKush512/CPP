@@ -4,9 +4,9 @@
 # include <iostream>
 
 template <typename T>
-void iter(T *x, int size, void (*fonc)(T)) //a voir
+void iter(T *x, size_t size, void (*fonc)( T const &)) //a voir
 {
-	for (int i = 0; i < size; i++)
+	for (size_t i = 0; i < size; i++)
 		fonc(x[i]);
 }
 

@@ -69,7 +69,8 @@ int	ConvertClass::_fillUpDigit(void)
 	if (_Double > INT_MAX || _Double < INT_MIN)
 		return (INCORRECT_INPUT);
 	_Int = static_cast<int>(_Double);
-	if (!isprint(_Int))
+	// if (!isprint(_Int))
+	if (!(_Int > 32 && _Int < 127))
 		return (INCORRECT_CHAR);
 	_Char = static_cast<char>(_Int);
 		return (2);
