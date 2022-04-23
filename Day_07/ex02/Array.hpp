@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/23 15:08:11 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/23 15:08:13 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
@@ -24,8 +36,6 @@ class Array
 			this->_size = other.size();
 			for (unsigned int i = 0; i < this->_size; i++)
 				myArr[i] = 0;
-			// return (*this);
-			// (*this) = other;
 		}
 		Array & operator = (const Array &other)
 		{
