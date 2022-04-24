@@ -2,36 +2,36 @@
 # define EASYFIND_HPP
 
 # include <iostream>
-# include <map>
 # include <vector>
-# include <list>
+# include <iterator>
+# include <algorithm>
+# include <exception>
 
-template <typename T>
-std::vector<int>::iterator easyfind(T x, int myInt)
+class CantFind : public std::exception
 {
-	std::vector<int>::iterator it;
-	try
+	public:
+
+	CantFind(std::string message) : _message(message) {};
+	const char* what(void) const throw()
 	{
-		it = find(T.begin(), T.end(), myInt);
-		return (it);
+		return (_message.c_str());
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	~CantFind(void)throw(){};
+
+	private:
 	
-}
+	std::string	_message;
+};
 
 template <typename T>
-T const min(T const &x, T const &y)
+typename T::iterator easyfind(T &v, int myInt)
 {
-	return (y <= x ? y : x);
+	typename T::iterator it = std::find(v.begin(), v.end(), myInt);
+
+	if (it == v.end())
+		throw CantFind("The element is not found!");
+	return (it);
 }
 
-template <typename T>
-T const max(T const &x, T const &y)
-{
-	return (y >= x ? y : x);
-}
 
 #endif
