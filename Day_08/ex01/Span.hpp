@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/24 21:49:24 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/24 21:49:26 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
@@ -7,7 +18,7 @@
 # include <iterator>
 # include <algorithm>
 # include <exception>
-
+# include <numeric> 
 class Span
 {
 	public:

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okushnir <okushnir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/24 21:48:37 by okushnir          #+#    #+#             */
+/*   Updated: 2022/04/24 21:48:39 by okushnir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 
@@ -11,16 +23,10 @@ class CantFind : public std::exception
 {
 	public:
 
-	CantFind(std::string message) : _message(message) {};
 	const char* what(void) const throw()
 	{
-		return (_message.c_str());
+		return ("CantFindError:The element is not found.");
 	}
-	~CantFind(void)throw(){};
-
-	private:
-	
-	std::string	_message;
 };
 
 template <typename T>
@@ -29,7 +35,7 @@ typename T::iterator easyfind(T &v, int myInt)
 	typename T::iterator it = std::find(v.begin(), v.end(), myInt);
 
 	if (it == v.end())
-		throw CantFind("The element is not found!");
+		throw CantFind();
 	return (it);
 }
 
