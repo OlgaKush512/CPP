@@ -18,9 +18,10 @@ class Span
 		~Span();
 
 	void			addNumber(int element);
+	void			addAll(void);
 	int				shortestSpan(void);
 	int				longestSpan(void) const;
-	unsigned int	getSize(void) const;
+	void			printSpan(void) const;
 
 
 	class ErrorAddNewElement: public std::exception
@@ -37,7 +38,8 @@ class Span
 
 	unsigned int		_size;
 	std::vector<int>	_myVector;
-	std::vector<int>	_tmp;
+
+	int					_getElement(unsigned int i) const;
 
 	Span(void);
 };

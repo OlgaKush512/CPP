@@ -2,7 +2,7 @@
 #include "Span.hpp"
 
 
-Span::Span(void) : _size(0), _myVector(0), _tmp(0)
+Span::Span(void) : _size(0), _myVector(0)
 {
 	return ;
 }
@@ -17,7 +17,7 @@ const char * Span::ErrorDistanceNotFound::what(void) const throw()
 	return ("Span::ErrorDistanceNotFound");
 }
 
-Span::Span(unsigned int n) : _size(n), _myVector(0), _tmp(0)
+Span::Span(unsigned int n) : _size(n), _myVector(0)
 {
 	return ;
 }
@@ -36,11 +36,6 @@ Span & Span::operator = (const Span &other)
 Span::~Span()
 {
 	return ;
-}
-
-unsigned int	Span::getSize(void) const
-{
-	return (this->_size);
 }
 
 void	Span::addNumber(int element)
@@ -71,3 +66,25 @@ int	Span::longestSpan(void) const
 	return (tmp[tmp.size() - 1]);
 }
 
+void	Span::addAll(void)
+{
+	int res;
+	srand(time(NULL));
+
+	for (size_t i = 0; i < _size; i++)
+	{
+		res = (_size * -1) + rand() % (_size - (_size * -1)  + 1);
+		addNumber(res);
+	}
+}
+
+void	Span::printSpan(void) const
+{
+	for (size_t i = 0; i < _size; i++)
+		std::cout << _getElement(i) << std::endl;
+}
+
+int	Span::_getElement(unsigned int i) const
+{
+	return (this->_myVector[i]);
+}
