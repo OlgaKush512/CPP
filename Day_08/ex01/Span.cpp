@@ -68,23 +68,19 @@ int	Span::longestSpan(void) const
 
 void	Span::addAll(void)
 {
-	int res;
 	srand(time(NULL));
+	std::vector<int> v(_size -_myVector.size());
+	
+	std::generate(v.begin(), v.end(), rand);
+	std::vector<int> temp(v.begin(), v.end());
 
-	for (size_t i = 0; i < _size; i++)
-	{
-		res = (_size * -1) + rand() % (_size - (_size * -1)  + 1);
-		addNumber(res);
-	}
+	if (temp.size() > (_size -_myVector.size()))
+		throw ErrorAddNewElement();
+	copy(temp.begin(), temp.end(), std::back_inserter(_myVector));
 }
 
 void	Span::printSpan(void) const
 {
 	for (size_t i = 0; i < _size; i++)
-		std::cout << _getElement(i) << std::endl;
-}
-
-int	Span::_getElement(unsigned int i) const
-{
-	return (this->_myVector[i]);
+		std::cout << this->_myVector[i] << std::endl;
 }

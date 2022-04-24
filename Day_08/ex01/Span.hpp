@@ -23,7 +23,6 @@ class Span
 	int				longestSpan(void) const;
 	void			printSpan(void) const;
 
-
 	class ErrorAddNewElement: public std::exception
 	{
 		const char* what(void) const throw();
@@ -39,7 +38,7 @@ class Span
 	unsigned int		_size;
 	std::vector<int>	_myVector;
 
-	int					_getElement(unsigned int i) const;
+	int	_randomNum(void);
 
 	Span(void);
 };

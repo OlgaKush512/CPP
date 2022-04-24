@@ -4,14 +4,15 @@ int main(void)
 {
 	std::cout << "______________________My_main_________________________________" << std::endl << std::endl;
 
-	unsigned int	N = 100;
+	unsigned int	N = 5;
 	Span			mySpan(N);
+	
 	mySpan.addAll();
 
 	mySpan.printSpan();
 	std::cout << std::endl;
 	std::cout << mySpan.shortestSpan() << std::endl;
-	std::cout << mySpan.longestSpan() << std::endl;
+	std::cout << mySpan.longestSpan() << std::endl << std::endl;
 
 	try
 	{
@@ -21,6 +22,16 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
+	std::cout << std::endl << std::endl;
+	
+	Span mySpan2(50000);
+	mySpan2.addNumber(11);
+	mySpan2.addNumber(50);
+
+	mySpan2.addAll();
+
+	std::cout << mySpan.shortestSpan() << std::endl;
+	std::cout << mySpan.longestSpan() << std::endl;
 	
 	std::cout << std::endl << std::endl;
 	std::cout << "______________________main_of_subject_________________________________" << std::endl << std::endl;
